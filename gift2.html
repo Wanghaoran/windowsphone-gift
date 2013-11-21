@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>许愿圣诞</title>
+<meta http-equiv="Cache-Control" content="max-age=3600">
+<meta name="MobileOptimized" content="240">
+<meta name="apple-touch-fullscreen" content="YES">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<style type="text/css" media="screen"> 
+body { margin:0; padding:0; height:100%;} 
+</style>
+</head>
+<body>
+<div id="popDiv" class="mydiv" style="display:none;">  
+    <img src="images/row.png" width="306" height="179" border="0"/> 
+    <div>  
+    <a href="javascript:closeBg()" class="btn_del">  
+       取消
+     </a>  
+    </div>  
+</div>                                   
+<div id="hidebg" class="hidebg" style="display:none"></div>  
+<div class="hkbox">
+	<div class="hkcon">
+    	<div class="hkcon_logo"></div>
+        <div class="hkcon_gift">
+        	<li class="g1"><img src="images/gift6.jpg"/></li>
+            <li class="g2"><img src="images/gift7.jpg"/></li>
+            <li class="g3"><img src="images/gift10.jpg"/></li>
+        </div>
+    </div>
+    <div class="hkbot">
+    	<div class="hkbot_con">
+        	<a href="#" onclick="showBg();" class="hkbot_btn">分享到朋友圈</a>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/snowfall.jquery.js"></script>
+<script type='text/javascript'> 	
+$(document).ready(function(){
+	//Start the snow default options you can also make it snow in certain elements, etc.
+	$(document).snowfall({round : true, minSize:1, maxSize:5}); // add rounded
+});
+ </script>
+ <script type="text/javascript">
+    //显示灰色 jQuery 遮罩层
+    function showBg() {
+        
+        $("#hidebg").css({
+            display: "block"
+        });
+        $("#popDiv").show();
+    }
+    //关闭灰色 jQuery 遮罩
+    function closeBg() {
+        $("#hidebg,#popDiv").hide();
+    }
+</script>
+</body>
+</html>

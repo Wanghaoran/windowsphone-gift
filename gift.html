@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>许愿圣诞</title>
+<meta http-equiv="Cache-Control" content="max-age=3600">
+<meta name="MobileOptimized" content="240">
+<meta name="apple-touch-fullscreen" content="YES">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="css/common.css">
+</head>
+<body>
+<div id="container">
+    <div class="header">
+    	 <div class="rightbar"></div>
+         <div class="logo"><a href="#"><img src="images/wplogo.png" width="175" height="25" border="0"></a></div>                    
+    </div>
+    <div class="clear"></div>
+    <div id="content">
+        <div class="con_title">许愿圣诞 WP格外好礼送给你</div>
+        <div class="clear20"></div>
+        <form id="testform" action="gift2.html" method="post">
+        <div id="chklist1" class="con_tree">
+                <div class="gift gifpos1"><input type="checkbox" value='1' /><label><img src="images/gift1.jpg" id="img_1"/></label></div>
+                <div class="gift gifpos2"><input type="checkbox" value='2' /><label><img src="images/gift2.jpg" id="img_2"/></label></div>
+                <div class="gift gifpos3"><input type="checkbox" value='3' /><label><img src="images/gift3.jpg" id="img_3"/></label></div>
+                <div class="gift gifpos4"><input type="checkbox" value='4' /><label><img src="images/gift4.jpg" id="img_4"/></label></div>
+                <div class="gift gifpos5"><input type="checkbox" value='5' /><label><img src="images/gift5.jpg" id="img_5"/></label></div>
+                <div class="gift gifpos6"><input type="checkbox" value='6' /><label><img src="images/gift6.jpg" id="img_6"/></label></div>
+                <div class="gift gifpos7"><input type="checkbox" value='7' /><label><img src="images/gift7.jpg" id="img_7"/></label></div>
+                <div class="gift gifpos8"><input type="checkbox" value='8' /><label><img src="images/gift8.jpg" id="img_8"/></label></div>
+                <div class="gift gifpos9"><input type="checkbox" value='9' /><label><img src="images/gift9.jpg" id="img_9"/></label></div>
+                <div class="gift gifpos10"><input type="checkbox" value='10' /><label><img src="images/gift10.jpg" id="img_10"/></label></div>
+              </div>
+        <div class="clear20"></div>
+        <!--<div class="con_treebtn"><a href="#">生成贺卡</a></div>-->
+        <div style="height:76px;width:320px; margin:0 auto;">
+			<div class="test" id="Msgtips" style="display:none;">
+				<input type="submit" value="生成贺卡" class="btn_hk"/>
+			</div>
+		</div>
+        </form>
+        <div class="clear20"></div>
+    </div>
+</div>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+setGradient('container','#ffffff','#b30f15',0);
+</script>
+<script type="text/javascript" src="js/snowfall.jquery.js"></script>
+<script type='text/javascript'> 	
+$(document).ready(function(){
+	//Start the snow default options you can also make it snow in certain elements, etc.
+	$(document).snowfall({round : true, minSize:1, maxSize:5}); // add rounded
+});
+ </script>
+<script type="text/javascript">
+//复选框
+(function($){
+	$.fn.hcheckbox=function(options){
+		$(':checkbox+label',this).each(function(){
+			$(this).addClass('checkbox');
+            if($(this).prev().is(':disabled')==false){
+                if($(this).prev().is(':checked'))
+				    $(this).addClass("checked");
+            }else{
+                $(this).addClass('disabled');
+            }
+		}).click(function(event){
+				if(!$(this).prev().is(':checked')){
+				    $(this).addClass("checked");
+                    $(this).prev()[0].checked = true;
+					$(this).hide();
+					if($('label.checked').size()==3){
+						$('#Msgtips').show();
+					}
+                }
+                else{
+                    $(this).removeClass('checked');			
+                    $(this).prev()[0].checked = false;
+                }
+                event.stopPropagation();
+			}
+		).prev().hide();
+	}
+})(jQuery)
+
+$(function(){
+	$('#chklist1').hcheckbox();
+});
+</script>
+</body>
+</html>
